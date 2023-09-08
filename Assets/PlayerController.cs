@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    public int money;
     // 动画组件
     public Animator ani;
 
@@ -46,6 +47,12 @@ public class PlayerController : MonoBehaviour
         ani.SetFloat("Speed", dir.magnitude);
 
         // 朝该方向移动
-        rBody.velocity = dir * 0.5f;
+        rBody.velocity = dir * 0.51f;
+    }
+
+    public void getMoney()
+    {
+        money++;
+        Debug.Log("Player get money");
     }
 }
