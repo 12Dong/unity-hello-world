@@ -76,9 +76,9 @@ public class TaskPatrol : Node
                     _animator.SetFloat ("Horizontal", 0);
                 }
 
-                // _animator.SetFloat("Speed", 0.5f);
-                _transform.position = Vector2.MoveTowards(_transform.position, wp.position, Time.deltaTime * 2f);
-                // _rigidbody2D.MovePosition(newPosition);
+                _animator.SetFloat("Speed", 0.5f);
+                Vector2 newPosition = Vector2.MoveTowards(_transform.position, wp.position, Time.deltaTime * 0.5f);
+                _rigidbody2D.MovePosition(newPosition);
             }
         }
 
