@@ -32,7 +32,7 @@ public class InventoryPanelManager : MonoBehaviour
         {
             Debug.Log($"{i} && {inventorySlots[i].inventoryItem}");
             // 物品已经存在 就用Slots中已有的 和 添加的 做叠加 并写入到对应Slot中
-            if(inventorySlots[i].inventoryItem != null && inventorySlots[i].inventoryItem.itemData == inventoryItem.itemData)
+            if(inventorySlots[i].inventoryItem is not null && inventorySlots[i].inventoryItem.itemData.id.Equals(inventoryItem.itemData.id))
             {
                 sign = true;
                 InventoryItem sumInventroyItem = new InventoryItem(inventoryItem.itemData, inventoryItem.number + inventorySlots[i].inventoryItem.number);
@@ -45,7 +45,7 @@ public class InventoryPanelManager : MonoBehaviour
         {
             for(int i = 0; i < inventorySlots.Capacity; i++)
             {
-                if(inventorySlots[i].inventoryItem == null)
+                if(inventorySlots[i].inventoryItem is null)
                 {
                     inventorySlots[i].DrawData(inventoryItem);
                     return;

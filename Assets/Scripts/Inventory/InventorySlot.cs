@@ -32,8 +32,6 @@ public class InventorySlot : MonoBehaviour
 
     public void DrawData(InventoryItem item)
     {
-        Debug.Log($"{item.itemData.icon}");
-        Debug.Log($"{item.number}");
 
         if(item is null)
         {
